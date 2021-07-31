@@ -36,7 +36,7 @@ const LoginForm = () => {
     },
     validate,
     onSubmit: values => {
-      axios.post('https://challenge-react.alkemy.org/', {
+      axios.post('http://challenge-react.alkemy.org/', {
         email: values.email,
         password: values.password
       })

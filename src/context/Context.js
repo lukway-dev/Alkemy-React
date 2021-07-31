@@ -35,12 +35,6 @@ export function ContextProvider ({ children }) {
 
     localStorage.setItem('heroes', JSON.stringify(heroes))
     localStorage.setItem('alignment', JSON.stringify(alignment))
-    // if(typeof heroes === 'object'){
-    // } else {
-    //   localStorage.setItem('heroes', heroes)
-    //   localStorage.setItem('alignment', alignment)
-    // }
-
   }, [contextData.heroes])
 
   return(

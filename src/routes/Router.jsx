@@ -7,7 +7,7 @@ import Login from '@containers/Login'
 const App = () => {
   return (
     <ContextProvider>
-      <Router basename="/Alkemy-React">
+      <Router>
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route exact path="/login" component={Login}/>
