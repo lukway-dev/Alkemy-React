@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react'
-import Context from '../context/Context'
+import React, { useContext } from 'react'
+import Context from '@context/Context'
 
 const SearcherHero = ({ data, handleAlert }) => {
   const { contextData, setContextData} = useContext(Context)

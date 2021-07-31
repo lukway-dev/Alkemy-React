@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 import HeroImage from '@images/homehero.svg'
-import Context from '../context/Context'
+import Context from '@context/Context'
 
 const TeamStats = () => {
   const {contextData, setContextData} = useContext(Context)
@@ -53,8 +53,6 @@ const TeamStats = () => {
       })
     }
   }, [heroesQuantity])
-
-  console.log(stats)
 
   return (
     <section className="team-stats">

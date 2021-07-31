@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
-import Context from '../context/Context'
-import Logo from '@images/Logo.svg'
+import Context from '@context/Context'
+import Logo from '@images/logo.svg'
 
 const Header = () => {
   const {contextData, setContextData } = useContext(Context)

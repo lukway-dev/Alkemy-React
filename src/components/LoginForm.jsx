@@ -2,8 +2,8 @@ import React, { useContext, useState } from 'react'
 import axios from 'axios'
 import { useFormik } from 'formik'
 import { Redirect } from 'react-router-dom'
-import Context from '../context/Context'
-import Logo from '@images/Logo.svg'
+import Context from '@context/Context'
+import Logo from '@images/logo.svg'
 
 const LoginForm = () => {
   const { contextData, setContextData } = useContext(Context)
@@ -36,7 +36,7 @@ const LoginForm = () => {
     },
     validate,
     onSubmit: values => {
-      axios.post('http://challenge-react.alkemy.org/', {
+      axios.post('https://challenge-react.alkemy.org/', {
         email: values.email,
         password: values.password
       })

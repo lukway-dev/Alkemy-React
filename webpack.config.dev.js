@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const Dotenv = require('dotenv-webpack')
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
@@ -12,9 +13,11 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
     alias: {
+      '@routes': path.resolve(__dirname, 'src/routes'),
       '@containers': path.resolve(__dirname, 'src/containers'),
       '@components': path.resolve(__dirname, 'src/components'),
       '@styles': path.resolve(__dirname, 'src/styles'),
+      '@context': path.resolve(__dirname, 'src/context'),
       '@images': path.resolve(__dirname, 'src/assets/images'),
       '@heroes': path.resolve(__dirname, 'src/assets/images/heroes')
     }
@@ -52,7 +55,8 @@ module.exports = {
       template: './public/index.html',
       filename: './index.html'
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
+    new Dotenv()
   ],
   devServer: {
     contentBase: path.join(__dirname, 'dist'),

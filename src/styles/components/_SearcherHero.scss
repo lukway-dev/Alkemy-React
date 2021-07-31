@@ -91,3 +91,10 @@
     height: 290px;
   }
 }
+
+@media (max-width: 425px) {
+  .searcher-hero{
+    width: 190px;
+    height: 250px;
+  }
+}

@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import Context from '../context/Context'
+import Context from '@context/Context'
 import axios from 'axios'
 import { useFormik } from 'formik'
 
-const AccessToken = 4204649746258245
+const AccessToken = process.env.API_ACCESS_TOKEN
 
 //Formik Validate
 const validate = values => {
@@ -16,7 +16,7 @@ const validate = values => {
 }
 
 const SearcherHeader = ({ handleShowSearcher, handleSetHeroes, handleAlert }) => {
-  const {contextData, setContextData} = useContext(Context)
+  const {contextData} = useContext(Context)
 
   const formik = useFormik({
     initialValues: {

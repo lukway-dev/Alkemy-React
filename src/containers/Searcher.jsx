@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import SearcherHeader from '@components/SearcherHeader'
 import SearcherHero from '@components/SearcherHero'
-import SearcherBackground from '../components/SearcherBackground'
+import SearcherBackground from '@components/SearcherBackground'
 
 const Searcher = ({ handleShowSearcher }) => {
   const [heroes, setHeroes] = useState('')

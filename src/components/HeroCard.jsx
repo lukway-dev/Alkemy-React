@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 import React, { useContext, useState } from 'react'
 import HeroImage from '@images/detailhero.svg'
-import Context from '../context/Context'
+import Context from '@context/Context'
 
 const HeroCard = ({ data }) => {
   const {contextData, setContextData} = useContext(Context)

@@ -1,13 +1,12 @@
 import React, { useContext } from 'react'
-import Context from '../context/Context'
-import HeroAdd from '../components/HeroAdd'
-import HeroCard from '../components/HeroCard'
+import Context from '@context/Context'
+import HeroAdd from '@components/HeroAdd'
+import HeroCard from '@components/HeroCard'
 
 
 const Team = ({ handleShowSearcher }) => {
   const {contextData} = useContext(Context)
   const heroes = contextData.heroes
-  // console.log(heroes.length)
 
   return (
     <section className="team">

@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react'
 import { Redirect } from 'react-router-dom'
-import Context from '../context/Context'
+import Context from '@context/Context'
 import Header from '@containers/Header'
 import Searcher from '@containers/Searcher'
 import Team from '@containers/Team'
-import TeamStats from '../components/TeamStats'
+import TeamStats from '@components/TeamStats'
 
 const Home = () => {
   const { contextData } = useContext(Context)
