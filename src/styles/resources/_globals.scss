@@ -1,0 +1,40 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  border: 0;
+  padding: 0;
+  height: 100vh;
+  background: $white-dark;
+  position: relative;
+  font: $font-text;
+  color: $black-light;
+}
+
+button{
+  border: unset;
+  padding: unset;
+  background: unset;
+  cursor: pointer;
+  transition: border .1s, background-color .1s;
+}
+
+input{
+  transition: border .1s, background-color .1s;
+  &:hover{
+    border: 2px solid $gray-dark;
+    background: $white;
+  }
+  &:focus{
+    outline: unset;
+    border: 2px solid $gray-dark;
+    background: $white;
+    box-shadow: 0 0 10px rgba($color: #757575, $alpha: .5);
+  }
+  &::placeholder{
+    color: $black-light;
+    font: $font-text;
+  }
+}

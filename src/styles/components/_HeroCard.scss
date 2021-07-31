@@ -1,0 +1,225 @@
+.hero-card-container{
+  min-width: 280px;
+  height: 430px;
+  position: relative;
+  transition: transform ease 1s;
+  transform-style: preserve-3d;
+  transform: perspective(1000px) rotateY(0deg);
+  &--flip{
+    @extend .hero-card-container;
+    .hero-card{
+      transform: rotateY(-180deg);
+    }
+    .hero-details{
+      transition: transform ease 1s;
+      transform: rotateY(0deg);
+    }
+  }
+}
+
+.hero-card{
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: $card-shadow;
+  display: grid;
+  grid-template-rows: 280px 140px;
+  z-index: 1;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transition: transform ease 1s;
+  &__image-container{
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    background: $black-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &::after{
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 75%, $black-dark 100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+  &__image{
+    height: 100%;
+  }
+  &__name{
+    margin: 0;
+    position: absolute;
+    bottom: 10px;
+    font: $font-hero-name;
+    color: $white;
+    z-index: 2;
+  }
+  &__details{
+    padding: 10px 15px;
+    background: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__menu{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__button{
+    font-size: 20px;
+    width: 100;
+    &--details{
+      @extend .hero-card__button;
+      color: $black;
+      &:hover{
+        color: $black-dark;
+      }
+    }
+    &--delete{
+      @extend .hero-card__button;
+      margin-left: 10px;
+      color: $red;
+      &:hover{
+        color: $red-dark;
+      }
+    }
+  }
+  &__stats-container{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 10px;
+    font: $font-detail;
+    text-transform: capitalize;
+  }
+  &__stat{
+    &--intelligence{
+      color: $stat-violet;
+    }
+    &--power{
+      color: $stat-red;
+    }
+    &--strength{
+      color: $stat-orange;
+    }
+    &--combat{
+      color: $stat-yellow;
+    }
+    &--durability{
+      color: $stat-green;
+    }
+    &--speed{
+      color: $stat-bluelight;
+    }
+  }
+  &__stat-value{
+    width: 100%;
+    height: 15px;
+    &--intelligence{
+      @extend .hero-card__stat-value;
+      &::-webkit-meter-optimum-value{
+        background: $stat-violet;
+      }
+    }
+    &--power{
+      @extend .hero-card__stat-value;
+      &::-webkit-meter-optimum-value{
+        background: $stat-red;
+      }
+    }
+    &--strength{
+      @extend .hero-card__stat-value;
+      &::-webkit-meter-optimum-value{
+        background: $stat-orange;
+      }
+    }
+    &--combat{
+      @extend .hero-card__stat-value;
+      &::-webkit-meter-optimum-value{
+        background: $stat-yellow;
+      }
+    }
+    &--durability{
+      @extend .hero-card__stat-value;
+      &::-webkit-meter-optimum-value{
+        background: $stat-green;
+      }
+    }
+    &--speed{
+      @extend .hero-card__stat-value;
+      &::-webkit-meter-optimum-value{
+        background: $stat-bluelight;
+      }
+    }
+  }
+}
+
+.hero-details{
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  padding: 15px;
+  background: $white;
+  box-shadow: $card-shadow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  &__name{
+    margin: 0;
+    font: $font-hero-name;
+  }
+  &__button{
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background: $red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: $white;
+  }
+  &__image-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  &__info{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    align-items: center;
+    text-align: left;
+    gap: 5px;
+    &-icon{
+      color: $pink;
+    }
+    &--good{
+      color: $green;
+    }
+    &--bad{
+      color: $red;
+    }
+    span{
+      font-size: 14px;
+      justify-self: flex-start;
+    }
+  }
+}

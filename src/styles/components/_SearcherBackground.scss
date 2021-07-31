@@ -1,0 +1,35 @@
+.searcher-background{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  &__text{
+    margin-bottom: 30px;
+    font: $font-20px-bold;
+    color: $black-light;
+    &-green{
+      color: $green;
+    }
+    &-red{
+      color: $red;
+    }
+  }
+  &__image-container{
+    position: relative;
+    &::after{
+      content: "";
+      width: 80px;
+      height: 15px;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(53, 53, 53, .7) 0%, rgba(53, 53, 53, 0) 100%);
+      position: absolute;
+      bottom: -30px;
+      animation: float_shadow 4s ease-in-out infinite;
+    }
+  }
+  &__image{
+    width: 100px;
+    animation: float 4s ease-in-out infinite;
+  }
+}

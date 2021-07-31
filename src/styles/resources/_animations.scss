@@ -1,0 +1,38 @@
+@keyframes appear {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 100%;
+  }
+}
+
+@keyframes float {
+  0%{
+    transform: translateY(-15px);
+  }
+  50%{
+    transform: translateY(15px);
+  }
+  100%{
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes float_shadow {
+  0%{
+    width: 50px;
+    height: 10px;
+    right: calc(50% - 25px);
+  }
+  50%{
+    width: 80px;
+    height: 15px;
+    right: calc(50% - 40px);
+  }
+  100%{
+    width: 50px;
+    height: 10px;
+    right: calc(50% - 25px);
+  }
+}

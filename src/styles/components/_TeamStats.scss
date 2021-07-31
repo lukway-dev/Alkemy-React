@@ -1,0 +1,176 @@
+.team-stats{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 20px;
+  display: grid;
+  grid-template-areas: "stats image apparence";
+  grid-template-columns: 1fr 200px 1fr;
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+  &__container{
+    grid-area: stats;
+    width: 100%;
+    height: fit-content;
+    padding: 15px;
+    border-radius: 15px;
+    background: $white;
+    box-shadow: $card-shadow;
+    text-transform: capitalize;
+  }
+  &__image-container{
+    grid-area: image;
+    position: relative;
+    &::after{
+      content: "";
+      width: 80px;
+      height: 15px;
+      background: radial-gradient(50% 50% at 50% 50%, rgba(53, 53, 53, .7) 0%, rgba(53, 53, 53, 0) 100%);
+      position: absolute;
+      bottom: -30px;
+      animation: float_shadow 4s ease-in-out infinite;
+    }
+  }
+  &__image{
+    width: 140px;
+    animation: float 4s ease-out infinite;
+  }
+  &__item{
+    &--intelligence{
+      color: $stat-violet;
+    }
+    &--power{
+      color: $stat-red;
+    }
+    &--strength{
+      color: $stat-orange;
+    }
+    &--combat{
+      color: $stat-yellow;
+    }
+    &--durability{
+      color: $stat-green;
+    }
+    &--speed{
+      color: $stat-bluelight;
+    }
+  }
+  &__item-value{
+    width: 100%;
+    height: 15px;
+    &::-webkit-meter-optimum-value{
+      animation: stat_value 1s ease-out;
+    }
+    &--intelligence{
+      @extend .hero-card__stat-value;
+      &::-webkit-meter-optimum-value{
+        height: 10px;
+        background: $stat-violet;
+      }
+    }
+    &--power{
+      @extend .hero-card__stat-value;
+      &::-webkit-meter-optimum-value{
+        background: $stat-red;
+      }
+    }
+    &--strength{
+      @extend .hero-card__stat-value;
+      &::-webkit-meter-optimum-value{
+        background: $stat-orange;
+      }
+    }
+    &--combat{
+      @extend .hero-card__stat-value;
+      &::-webkit-meter-optimum-value{
+        background: $stat-yellow;
+      }
+    }
+    &--durability{
+      @extend .hero-card__stat-value;
+      &::-webkit-meter-optimum-value{
+        background: $stat-green;
+      }
+    }
+    &--speed{
+      @extend .hero-card__stat-value;
+      &::-webkit-meter-optimum-value{
+        background: $stat-bluelight;
+      }
+    }
+  }
+  &__apparence{
+    grid-area: apparence;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    &-item{
+      width: 250px;
+      height: fit-content;
+      padding: 15px;
+      border-radius: 15px;
+      background: $white;
+      box-shadow: $card-shadow;
+      text-align: center;
+    }
+    &-caption{
+      margin: 0 0 20px;
+      line-height: 24px;
+      color: $black;
+      font: $font-20px-bold;
+      i{
+        margin-right: 10px;
+        font-size:24px;
+        color: $pink;
+      }
+    }
+    &-value{
+      color: $pink;
+      font: $font-caption;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .team-stats{
+    grid-template-areas: "apparence" "image" "stats";
+    grid-template-columns: unset;
+    grid-template-rows: auto 250px auto;
+    &__apparence{
+      height: fit-content;
+      display: flex;
+      flex-direction: unset;
+      justify-content: space-around;
+      align-items: center;
+      &-item{
+        width: 200px;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .team-stats{
+    &__apparence{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      &-item{
+        width: 100%;
+      }
+    }
+  }
+}
+
+@keyframes stat_value {
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 100%;
+  }
+}

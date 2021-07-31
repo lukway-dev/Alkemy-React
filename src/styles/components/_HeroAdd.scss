@@ -1,0 +1,52 @@
+.hero-card-add{
+  min-width: calc(280px - 4px);
+  min-height: calc(430px - 4px);
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border-radius: 15px;
+  background: $white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &::after{
+    content: "";
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 15px;
+    background: linear-gradient(180deg, #F32556 0%, #FBBA00 50%, #F92D00 100%);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    z-index: -1;
+  }
+  &__text{
+    margin-bottom: 30px;
+    display: block;
+    font: $font-20px-bold;
+    color: $pink;
+  }
+  &__button{
+    width: 80px;
+    height: 80px;
+    margin-bottom: calc(50% - 40px);
+    border: 2px solid $pink;
+    border-radius: 100%;
+    background: $white-dark;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    color: $pink;
+    font-size: 30px;
+    transition: font-size .1s;
+    &:hover{
+      border-color: $pink-dark;
+      background: $white;
+      font-size: 2.25em;
+    }
+  }
+}
